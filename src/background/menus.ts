@@ -1,4 +1,6 @@
+import { ContentMessageType } from "../MessageTypes/ContentMessageType";
 import browser, { menus, Menus, Tabs } from "webextension-polyfill";
+import { sendMessageToContent } from "./messaging";
 
 const PARENT_ITEM_ID = "page-editor-parent";
 // TODO check if i should add a highlight option
@@ -50,11 +52,11 @@ export function loadMenusHandler() {
 
 function onContextMenuClick(info: Menus.OnClickData, tab?: Tabs.Tab) {
   if (info.menuItemId === REMOVE_ITEM_ID) {
+    sendMessageToContent(tab?.id || 0, ContentMessageType.DELETE_ELEMENT, {
+      elementId: info.targetElementId,
+    });
   }
 
   if (info.menuItemId === EDIT_ITEM_ID) {
   }
-
-  console.log(info);
-  console.log(tab);
 }
