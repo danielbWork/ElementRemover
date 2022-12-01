@@ -1,4 +1,3 @@
-import { ContentMessageType } from "../MessageTypes/ContentMessageType";
 import browser from "webextension-polyfill";
 
 /**
@@ -6,15 +5,12 @@ import browser from "webextension-polyfill";
  * @param message The message we receive
  */
 function handleMessage(message: any) {
-  const { type, data } = message;
+  const { data } = message;
 
-  if (type === ContentMessageType.DELETE_ELEMENT) {
+  if (data?.elementId) {
     const element = browser.menus.getTargetElement(data.elementId);
 
     element?.remove();
-  }
-
-  if (type === ContentMessageType.GET_ELEMENT_DATA) {
   }
 }
 

@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
-	"name": "PageEditor",
-	"description": "Allows editing webpages without opening dev menu",
+	"name": "Element Remover",
+	"description": "Allows removing elements from webpages",
 	"version": "1.0.0",
 	"icons": {},
 	"permissions": ["<all_urls>", 
@@ -19,9 +19,5 @@
 				"src/content/index.ts"
 			]
 		}
-	],
-	"browser_action": {
-		"default_popup": "src/browserAction/index.html",
-		"default_title": "PageEditor"
-	}
+	]
 }
