@@ -3,7 +3,10 @@
 	"name": "Element Remover",
 	"description": "Allows removing elements from webpages",
 	"version": "1.0.0",
-	"icons": {},
+	"icons": {
+		"48": "icons/remove_icon-48.png",
+		"96": "icons/remove_icon-96.png"
+	},
 	"permissions": ["<all_urls>", 
 	"menus",
 	"activeTab"],
